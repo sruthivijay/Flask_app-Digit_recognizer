@@ -24,11 +24,13 @@ def make_prediction():
 		# read in file as raw pixels values
 		# (ignore extra alpha channel and reshape as its a single image)
 		img = misc.imread(file)
-		img = img[:,:,:3]
-		img = img.reshape(1, -1)
+		#image_resized = misc.imresize(img, (28, 28))
+		#img = img[:,:,:3]
+		img1 = img[np.newaxis,:,:,:1]
+		#img = img1.reshape(1, -1)
 
 		# make prediction on new image
-		prediction = model.predict(img)
+		prediction = model.predict(img1)
 	
 		# squeeze value from 1D array and convert to string for clean return
 		label = str(np.squeeze(prediction))
