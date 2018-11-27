@@ -3,7 +3,7 @@ A simple web-application that recognizes handwritten digits. Developed using Ten
 This model is trained with MNSIT dataset.
 Model is developed using CNN-Keras.
 
-Tu run it locally follow the below steps.
+To run it locally follow the below steps.
 git clone https://github.com/sruthivijay/Flask_app-Digit_recognizer.git
 
 Navigate to the directory
