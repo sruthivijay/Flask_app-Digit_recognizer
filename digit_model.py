@@ -25,6 +25,10 @@ from keras.callbacks import ReduceLROnPlateau
 
 
 sns.set(style='white', context='notebook', palette='deep')
+import tensorflow as tf
+global graph,model
+
+graph = tf.get_default_graph()
 
 
 # In[10]:

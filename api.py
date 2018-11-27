@@ -3,7 +3,10 @@ from flask import Flask, request, render_template
 from sklearn.externals import joblib
 import numpy as np
 from scipy import misc
+import tensorflow as tf
+global graph,model
 
+graph = tf.get_default_graph()
 
 app = Flask(__name__)
 
@@ -30,10 +33,13 @@ def make_prediction():
 		#img = img1.reshape(1, -1)
 
 		# make prediction on new image
-		prediction = model.predict(img1)
+		with graph.as_default():
+			prediction = model.predict(img1)
+			results = np.argmax(prediction,axis = 1)
+		print(prediction)
 	
 		# squeeze value from 1D array and convert to string for clean return
-		label = str(np.squeeze(prediction))
+		label = str(np.squeeze(results))
 
 		# switch for case where label=10 and number=0
 		if label=='10': label='0'
