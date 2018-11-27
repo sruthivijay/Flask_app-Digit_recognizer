@@ -11,7 +11,7 @@ import seaborn as sns
 #get_ipython().magic('matplotlib inline')
 from sklearn.externals import joblib
 np.random.seed(2)
-
+#import os; os.environ['KERAS_BACKEND'] = 'theano'
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix
 import itertools
