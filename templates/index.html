@@ -1,0 +1,30 @@
+<html> 
+
+<head>
+<title>Model as a Flask API</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style> 
+input[type=file] {
+    background-color: #3CBC8D;
+    color: black;
+}
+input[type=submit] {
+    background-color: #3CBC8D;
+    color: white;
+}
+</style>
+</head>
+
+<body bgcolor="white">
+
+    <h1 align = 'center' style="color:black">Digit Predictor</h1>
+
+    <form action="/predict" method="post" enctype="multipart/form-data">
+      <input type="file" name="image" value="Upload" style="color:white">
+      <input type="submit" value="Predict" > {% if label %} {{ label }} {% endif %}
+    </form>
+
+</body>
+
+</html>
