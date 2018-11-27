@@ -8,7 +8,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 import seaborn as sns
-get_ipython().magic('matplotlib inline')
+#get_ipython().magic('matplotlib inline')
 from sklearn.externals import joblib
 np.random.seed(2)
 
